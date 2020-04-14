@@ -1,0 +1,13 @@
+# Project specific testing files
+
+test.csv
+test.json
+test_new_log.txt
+test*.csv
+test*.json
+test*.txt
+
+# pycharm and python
+venv
+.idea
+__pycache__
