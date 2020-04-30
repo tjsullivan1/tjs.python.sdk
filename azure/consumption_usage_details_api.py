@@ -41,7 +41,7 @@ def main(client_id=os.environ['AZURE_CLIENT_ID'],
 def query_usage_details(subscription, token, api_version='2019-04-01-preview', verb="GET",
                         provider="Microsoft.Consumption", resource="usageDetails"):
     url = f"https://management.azure.com/subscriptions/{subscription}/providers/{provider}/{resource}" \
-          f"?api-version={api_version}"
+          f"?$expand=meterDetails,additionalInfo&api-version={api_version}"
 
     payload = {}
     headers = {
