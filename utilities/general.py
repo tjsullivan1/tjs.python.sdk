@@ -1,5 +1,6 @@
 import logging, os, json, csv
 
+
 def main():
 
     return None
@@ -41,7 +42,6 @@ def write_to_csv(usage_detail_dict, csv_file, header):
         writer.writerow(usage_detail_dict)
 
     return None
-
 
 
 if __name__ == '__main__':

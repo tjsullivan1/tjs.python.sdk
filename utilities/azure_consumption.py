@@ -80,5 +80,29 @@ def get_selected_properties_as_dict(consumption_usage_detail, count=0):
     return selected_data
 
 
+def format_data(data_object, debug_state, count):
+    if debug_state:
+        selected = get_all_properties_as_dict(data_object, count)
+        fieldnames = ["count_id", "additional_properties", "id", "name", "type", "tags", "billing_account_id",
+                      "billing_account_name", "billing_period_start_date", "billing_period_end_date",
+                      "billing_profile_id", "billing_profile_name", "account_owner_id", "account_name",
+                      "subscription_id", "subscription_name", "date_property", "product", "part_number",
+                      "meter_id", "meter_details", "quantity", "effective_price", "cost", "unit_price",
+                      "billing_currency", "resource_location", "consumed_service", "resource_id", "resource_name",
+                      "service_info1", "service_info2", "additional_info", "invoice_section", "cost_center",
+                      "resource_group", "reservation_id", "reservation_name", "product_order_id",
+                      "product_order_name",
+                      "offer_id", "is_azure_credit_eligible", "term", "publisher_name", "publisher_type",
+                      "plan_name",
+                      "charge_type", "frequency", ]
+    else:
+        selected = get_selected_properties_as_dict(data_object, count)
+        fieldnames = ["id", "billing_period_start_date", "billing_period_end_date", "subscription_id",
+                      "subscription_name", "quantity", "effective_price", "cost", "unit_price", "billing_currency",
+                      "resource_id", "resource_name", "resource_id", "resource_name", "tags", ]
+
+    return selected, fieldnames
+
+
 if __name__ == '__main__':
     main()
