@@ -1,4 +1,6 @@
 from azure.common.credentials import ServicePrincipalCredentials
+from azure.devops.connection import Connection
+from msrest.authentication import BasicAuthentication
 
 
 def main():
